@@ -1,0 +1,20 @@
+from flask import Flask, render_template
+import sqlite3 as sql
+
+app = Flask(__name__)
+
+@app.route('/')
+@app.route('/home')
+def home():
+    return render_template('index.html')
+
+@app.route('/projects')
+def projects():
+    return render_template('projects.html')
+
+@app.route('/contact')
+def projects():
+    return render_template('contact.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
