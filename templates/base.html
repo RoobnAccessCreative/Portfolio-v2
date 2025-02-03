@@ -20,8 +20,11 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='/css/nav.css') }}"/>
         <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/photos/favicon.jpg') }}"/>
 
+        {% block head %}{% endblock %}
+
     </head>
     <body>
+
         <!-- sidebar for mobile -->
         <div class="ui sidebar inverted vertical menu">
             <a class="item">
@@ -37,7 +40,8 @@
                 <p>Contact</p>
             </a>
         </div>
-        <div class="pusher">
+
+        <div class="pusher" id="BG-{% block bg %}{% endblock %}"> <!-- custom id for each page -->
 
             <div>
                 <i class="moon outline icon desktop"></i> <!-- for desktop -->
@@ -45,7 +49,7 @@
                 <!-- for mobile/smaller resolutions -->
                 <i class="hamburger icon"></i>
                 <!-- for desktop -->
-                 <div class="menu">
+                 <div class="menu desktop">
                     <h3>Home</h3>
                     <h3>Projects</h3>
                     <h3>Contact</h3>
@@ -55,5 +59,6 @@
             {% block content %}{% endblock %}
 
         </div>
+        
     </body>
 </html>

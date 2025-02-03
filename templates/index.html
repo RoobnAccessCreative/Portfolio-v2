@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
+{% block head %}
+    <title>RD Portfolio | Home</title>
+{% endblock %}
+
+<!-- becomes '#BG-HOME' for 'div.pusher' i.e. 'div#BG-HOME.pusher' -->
+{% block bg %}HOME{% endblock %} 
+
 {% block content %}
 
     <header>
@@ -10,9 +17,20 @@
         </p>
     </header>
 
+    <div class="SPLITTER"></div>
+
     <div class="home-para" id="first">
         <img src="{{ url_for('static', filename='/photos/filler.svg') }}"/>
-        <p class="text"></p>
+        <p class="text">
+
+        </p>
+    </div>
+
+    <div class="home-para" id="second">
+        <img src="{{ url_for('static', filename='/photos/filler.svg') }}"/>
+        <p class="text">
+
+        </p>
     </div>
 
 {% endblock %}
