@@ -13,7 +13,7 @@ def projects():
     return render_template('projects.html')
 
 @app.route('/contact')
-def projects():
+def contact():
     return render_template('contact.html')
 
 if __name__ == '__main__':
