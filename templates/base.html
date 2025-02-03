@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js" integrity="sha512-gnoBksrDbaMnlE0rhhkcx3iwzvgBGz6mOEj4/Y5ZY09n55dYddx6+WYc72A55qEesV8VX2iMomteIwobeGK1BQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css" integrity="sha512-3quBdRGJyLy79hzhDDcBzANW+mVqPctrGCfIPosHQtMKb3rKsCxfyslzwlz2wj1dT8A7UX+sEvDjaUv+WExQrA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+        <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/light.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/nav.css') }}"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbit|Lexend"/>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/photos/favicon.jpg') }}"/>
+    </head>
+    <body>
+        <div class="ui sidebar inverted vertical menu">
+            <a class="item">
+                <i class="moon outline icon"></i>
+            </a>
+            <a class="item">
+                <p>Home</p>
+            </a>
+            <a class="item">
+                <p>Projects</p>
+            </a>
+            <a class="item">
+                <p>Contact</p>
+            </a>
+        </div>
+        <div class="pusher">
+
+            <div>
+                <i class="moon outline icon desktop"></i> <!-- for desktop -->
+                {% block title %}{% endblock %}
+                <!-- for mobile/smaller resolutions -->
+                <i class="hamburger icon"></i>
+                <!-- for desktop -->
+                 <div class="menu">
+                    <h3>Home</h3>
+                    <h3>Projects</h3>
+                    <h3>Contact</h3>
+                 </div>
+            </div>
+
+            {% block content %}{% endblock %}
+
+        </div>
+    </body>
+</html>
