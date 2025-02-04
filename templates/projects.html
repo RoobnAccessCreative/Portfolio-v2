@@ -1,3 +1,31 @@
 {% extends 'base.html' %}
 
 {% block head %}<title>RD Portfolio | Projects</title>{% endblock %}
+
+<!-- becomes '#BG-PROJECTS' for 'div.wrapper' i.e. 'div#BG-PROJECTS.wrapper' -->
+{% block bg %}id="BG-PROJECTS"{% endblock %}
+
+{% block title %}<h2>projects</h2>{% endblock %}
+
+{% block content %}
+
+    <div>
+        <h4>pinned</h4>
+        <!-- for i in pinned projects -->
+            <a href="{{url}}">
+                <img src="{{ url_for('static', filename='/photos/filler.svg') }}"/>
+            </a>
+    </div>
+
+    <div>
+        <div>
+            <!-- for i in other projects -->
+                <a href="{{url}}">
+                    <img src="{{ url_for('static', filename='/photos/filler.svg') }}"/>
+                </a>
+                <p class="text">
+                    
+                </p>
+        </div>
+    </div>
+{% endblock %}
