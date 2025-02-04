@@ -1,0 +1,7 @@
+body {
+    background-color: rgb(172, 36, 193);
+}
+
+#BG-HOME {
+    background-image: linear-gradient(to top left, aqua, rgba(255, 255, 255, 0));
+}

@@ -41,22 +41,26 @@
             </a>
         </div>
 
-        <div class="pusher" id="BG-{% block bg %}{% endblock %}"> <!-- custom id for each page -->
+        <div class="pusher"> 
+            
+            <div class="wrapper" {% block bg %} {% endblock %}> <!-- custom settings for each page -->
 
-            <div>
-                <i class="moon outline icon desktop"></i> <!-- for desktop -->
-                {% block title %}{% endblock %}
-                <!-- for mobile/smaller resolutions -->
-                <i class="hamburger icon"></i>
-                <!-- for desktop -->
-                 <div class="menu desktop">
-                    <h3>Home</h3>
-                    <h3>Projects</h3>
-                    <h3>Contact</h3>
-                 </div>
+                <div>
+                    <i class="moon outline icon desktop"></i> <!-- for desktop -->
+                    {% block title %}{% endblock %}
+                    <!-- for mobile/smaller resolutions -->
+                    <i class="hamburger icon"></i>
+                    <!-- for desktop -->
+                    <div class="menu desktop">
+                        <h3>Home</h3>
+                        <h3>Projects</h3>
+                        <h3>Contact</h3>
+                    </div>
+                </div>
+
+                {% block content %}{% endblock %}
+
             </div>
-
-            {% block content %}{% endblock %}
 
         </div>
         
