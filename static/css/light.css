@@ -3,7 +3,23 @@ html, body {
     min-height: 100vh;
     width: 100vw;
     margin: 0;
+
+    color: #101b23;
 }
+
+/* font settings */
+    .major-text {
+        font-family: "Orbit", monospace;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .text {
+        font-family: "Lexend", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+
 
     /* MOBILE FIRST */
 
@@ -13,7 +29,11 @@ html, body {
 
 /* backgrounds */
     .wrapper {
+        height: 100%;
+        width: 100%;
         background-color: #f3f3f3;
+        display: flex;
+        flex-direction: column;
     }
     #BG-HOME {
         background-image: linear-gradient(to bottom right, #db5629, #23798b);
@@ -26,15 +46,30 @@ html, body {
         background-image: linear-gradient(to bottom right, rgba(0,0,0,0) 18%, #db5629);
     }
 
-/* font settings */
-    .major-text {
-        font-family: "Orbit", serif;
-        font-weight: 400;
-        font-style: normal;
+/* top-bar */
+    nav {
+        height: max-content;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
-    .text {
-        font-family: "Lexend", serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
+
+    .title {
+        line-height: 0;
+    }
+
+    .hamburger.icon {
+        /* tbc */
+        background-color: rgb(249 249 251 / 76%);
+        border-radius: 0.6rem;
+        font-size: 3em;
+        padding-bottom: 10px;
+        height: 100%;
+    }
+
+/* home */
+    .home-img {
+        width: 80%;
+        height: auto;
     }
