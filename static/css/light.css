@@ -1,7 +1,7 @@
 
 html, body {
-    min-height: 100vh;
-    width: 100vw;
+    // min-height: 100vh;
+    // width: 100vw;
     margin: 0;
 
     color: #101b23;
@@ -27,15 +27,16 @@ html, body {
     display: none !important;
 }
 
-/* backgrounds */
-    .wrapper {
-        height: 100%;
-        width: 100%;
-        background-color: #f3f3f3;
+.wrapper {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #f3f3f3;
 
-        display: flex;
-        flex-direction: column;
-    }
+    display: flex;
+    flex-direction: column;
+}
+
+/* backgrounds */
     #BG-HOME {
         background-image: linear-gradient(to bottom right, #db5629, #23798b);
         color: #f9f9fb;
@@ -65,10 +66,10 @@ html, body {
     .hamburger {
         height: 8vh;
         width: auto;
-    }
-    .hamburger:active {
-        background-color: rgba(249, 249, 251, 0.1);
-        border-radius: 20px;
+        :active {
+            background-color: rgba(249, 249, 251, 0.1);
+            border-radius: 20px;   
+        }
     }
 
 /* home */
