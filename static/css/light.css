@@ -63,8 +63,12 @@ html, body {
     }
 
     .hamburger {
-        height: 100%;
+        height: 8vh;
         width: auto;
+    }
+    .hamburger:active {
+        background-color: rgba(249, 249, 251, 0.1);
+        border-radius: 20px;
     }
 
 /* home */
@@ -79,6 +83,6 @@ html, body {
 
 
   
-  
+
   
   
