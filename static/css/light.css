@@ -32,6 +32,7 @@ html, body {
         height: 100%;
         width: 100%;
         background-color: #f3f3f3;
+
         display: flex;
         flex-direction: column;
     }
@@ -48,8 +49,10 @@ html, body {
 
 /* top-bar */
     nav {
-        height: max-content;
-        width: 100%;
+        height: fit-content;
+        width: 90%;
+        margin: 5%;
+
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -59,13 +62,9 @@ html, body {
         line-height: 0;
     }
 
-    .hamburger.icon {
-        /* tbc */
-        background-color: rgb(249 249 251 / 76%);
-        border-radius: 0.6rem;
-        font-size: 3em;
-        padding-bottom: 10px;
+    .hamburger {
         height: 100%;
+        width: auto;
     }
 
 /* home */
@@ -73,3 +72,13 @@ html, body {
         width: 80%;
         height: auto;
     }
+
+    
+
+
+
+
+  
+  
+  
+  

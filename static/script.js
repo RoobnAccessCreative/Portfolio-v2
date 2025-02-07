@@ -1,4 +1,4 @@
-$('.hamburger.icon').click(() => {
+$('.hamburger').click(() => {
     $('.ui.sidebar').sidebar('toggle');
 });
 
