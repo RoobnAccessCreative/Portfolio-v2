@@ -16,8 +16,8 @@
 
         <!-- Local files -->
         <script src="{{ url_for('static', filename='script.js') }}" defer></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='/css/light.css') }}"/>
-        <link rel="stylesheet" href="{{ url_for('static', filename='/css/nav.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/light.scss') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/nav.scss') }}"/>
         <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/photos/favicon.svg') }}"/>
 
         {% block head %}{% endblock %}
@@ -43,7 +43,7 @@
 
         <div class="pusher"> 
             
-            <div class="wrapper" {% block bg %} {% endblock %}> <!-- custom settings for each page -->
+            <div class="wrapper flex" {% block bg %} {% endblock %}> <!-- custom settings for each page -->
 
                 <nav>
                     <i class="moon outline icon - desktop theme-switch"></i> <!-- for desktop -->
