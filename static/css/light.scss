@@ -46,7 +46,7 @@ html, body {
         background-image: linear-gradient(to bottom right, rgba(0,0,0,0) 18%, #db5629);
     }
 
-/* top-bar */
+// top-bar
     nav {
         height: fit-content;
         width: 90%;
@@ -64,7 +64,8 @@ html, body {
     .hamburger {
         height: 8vh;
         width: auto;
-        :active {
+        
+        &:active {
             background-color: rgba(249, 249, 251, 0.1);
             border-radius: 20px;   
         }
