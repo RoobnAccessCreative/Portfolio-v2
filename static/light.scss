@@ -5,21 +5,21 @@ html, body {
     color: #101b23;
 }
 
-/* font settings */
+// font settings
     .major-text {
-        font-family: "Orbit", monospace;
+        font-family: "Orbit", sans-serif;
         font-weight: 400;
         font-style: normal;
     }
     .text {
-        font-family: "Lexend", sans-serif;
+        font-family: "JetBrains Mono", monospace;
         font-optical-sizing: auto;
         font-weight: 400;
         font-style: normal;
     }
 
 
-    /* MOBILE FIRST */
+    // MOBILE FIRST 
 
 .desktop {
     display: none !important;
@@ -34,7 +34,7 @@ html, body {
     flex-direction: column;
 }
 
-/* backgrounds */
+// backgrounds 
     #BG-HOME {
         background-image: linear-gradient(to bottom right, #db5629, #23798b);
         color: #f9f9fb;
@@ -71,7 +71,7 @@ html, body {
         }
     }
 
-/* home */
+// home 
     .home-img {
         width: 80%;
         height: auto;
