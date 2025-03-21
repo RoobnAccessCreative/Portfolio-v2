@@ -3,21 +3,20 @@
     <head>
 
         <meta charset="U-TF8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1"> <!-- god tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
 
-        <!-- CDNs -->
+        {# CDNs #}
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js" integrity="sha512-gnoBksrDbaMnlE0rhhkcx3iwzvgBGz6mOEj4/Y5ZY09n55dYddx6+WYc72A55qEesV8VX2iMomteIwobeGK1BQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css" integrity="sha512-3quBdRGJyLy79hzhDDcBzANW+mVqPctrGCfIPosHQtMKb3rKsCxfyslzwlz2wj1dT8A7UX+sEvDjaUv+WExQrA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        <!-- Google fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Orbit&display=swap" rel="stylesheet">
+        {# Google Fonts #}
+        
 
-        <!-- Local files -->
+        {# Local Files #}
         <script src="{{ url_for('static', filename='script.js') }}" defer></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='/css/light.scss') }}"/>
-        <link rel="stylesheet" href="{{ url_for('static', filename='/css/nav.scss') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='light.min.css') }}"/>
         <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/photos/favicon.svg') }}"/>
 
         {% block head %}{% endblock %}
@@ -25,12 +24,12 @@
     </head>
     <body>
 
-        <!-- sidebar for mobile -->
+        {# Mobile sidebar #}
         <div class="ui sidebar inverted vertical menu right">
             <a class="item">
                 <i class="moon outline icon"></i>
             </a>
-            <a class="item - major-text">
+            <a class="item {##} major-text">
                 <p>Home</p>
             </a>
             <a class="item - major-text">
@@ -41,27 +40,30 @@
             </a>
         </div>
 
+        {# Content #}
         <div class="pusher"> 
-            
-            <div class="wrapper flex" {% block bg %} {% endblock %}> <!-- custom settings for each page -->
+            <div class="wrapper flex" {% block bg %} {% endblock %}> {# custom settings for each page #}
 
                 <nav>
-                    <i class="moon outline icon - desktop theme-switch"></i> <!-- for desktop -->
+
+                    <i class="moon outline icon - desktop theme-switch"></i> {# for desktop #}
+
                     {% block title %}<div></div>{% endblock %}
-                    <!-- for mobile/smaller resolutions -->
-                    <img class="hamburger" src="{{ url_for('static', filename='/photos/hamburger.svg') }}"/>
-                    <!-- for desktop -->
+
+                    <img class="hamburger" src="{{ url_for('static', filename='/photos/hamburger.svg') }}"/> {# Mobile hamburger icon #}
+                    
+                    {# Desktop nav buttons #}
                     <div class="menu desktop">
                         <h3 class="major-text">Home</h3>
                         <h3 class="major-text">Projects</h3>
                         <h3 class="major-text">Contact</h3>
                     </div>
+
                 </nav>
 
                 {% block content %}{% endblock %}
 
             </div>
-
         </div>
         
     </body>

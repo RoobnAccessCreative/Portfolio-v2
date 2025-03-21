@@ -13,8 +13,8 @@ def projects():
     return render_template('projects.html')
 
 @app.route('/projects/<name>')
-def project(name):
-    return render_template('projIndiv.html')
+def single(name):
+    return render_template('single.html')
 
 @app.route('/contact')
 def contact():
