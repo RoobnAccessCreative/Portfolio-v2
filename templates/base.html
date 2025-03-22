@@ -18,7 +18,7 @@
 
         {# Local Files #}
         <script src="{{ url_for('static', filename='script.js') }}" defer></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.min.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='/style/style.min.css') }}"/>
         <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/photos/favicon.svg') }}"/>
 
         {% block head %}{% endblock %}
@@ -44,21 +44,30 @@
 
         {# Content #}
         <div class="pusher"> 
-            <div class="wrapper flex" {% block bg %} {% endblock %}> {# custom settings for each page #}
+            <div class="wrapper">
 
                 <nav>
 
-                    <i class="moon outline icon - desktop theme-switch"></i> {# for desktop #}
+                    <span id="theme-switch">
+                        <i class="moon outline icon - light-icon"></i>
+                        <i class="sun outline icon - dark-icon"></i>
+                    </span>
 
                     {% block title %}<div></div>{% endblock %}
-
-                    <img class="hamburger" src="{{ url_for('static', filename='/photos/hamburger.svg') }}"/> {# Mobile hamburger icon #}
                     
+                    {# Mobile hamburger icon #}
+                    <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.138428" y="0.215332" width="71.9797" height="71.9797" rx="15" fill="#F9F9FB" fill-opacity="0.15"/>
+                        <rect x="12.3103" y="18.0391" width="47.6362" height="5.44412" rx="2" fill="#F9F9FB" fill-opacity="0.75"/>
+                        <rect x="12.3103" y="33.4834" width="47.6362" height="5.44412" rx="2" fill="#F9F9FB" fill-opacity="0.75"/>
+                        <rect x="12.3103" y="48.9272" width="47.6362" height="5.44412" rx="2" fill="#F9F9FB" fill-opacity="0.75"/>
+                    </svg>
+
                     {# Desktop nav buttons #}
                     <div class="menu desktop">
-                        <h3 class="major-text">Home</h3>
-                        <h3 class="major-text">Projects</h3>
-                        <h3 class="major-text">Contact</h3>
+                        <h3 class="major-text {{ nav['home'] }}">Home</h3>
+                        <h3 class="major-text {{ nav['projects'] }}">Projects</h3>
+                        <h3 class="major-text {{ nav['contact'] }}">Contact</h3>
                     </div>
 
                 </nav>

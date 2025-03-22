@@ -2,8 +2,11 @@
 
 html, body {
     margin: 0;
+    color: var(--text);
+    background: blue;
 
-    color: #101b23;
+    min-height: 100vh;
+    width: 100vw;
 }
 
 // font settings
@@ -20,32 +23,16 @@ html, body {
     }
 
 
-    // MOBILE FIRST 
+// MOBILE STYLES
 
 .desktop {
     display: none !important;
 }
 
 .wrapper {
-    min-height: 100vh;
-    width: 100vw;
-    background-color: #f3f3f3;
-
     display: flex;
     flex-direction: column;
 }
-
-// backgrounds 
-    #BG-HOME {
-        background-image: linear-gradient(to bottom right, #db5629, #23798b);
-        color: #f9f9fb;
-    }
-    #BG-PROJECTS {
-        background-image: linear-gradient(to bottom right, rgba(0,0,0,0) 18%, #23798b);
-    }
-    #BG-CONTACT {
-        background-image: linear-gradient(to bottom right, rgba(0,0,0,0) 18%, #db5629);
-    }
 
 // top-bar
     nav {
@@ -55,7 +42,7 @@ html, body {
 
         display: flex;
         align-items: center;
-        // justify-content: space-between;
+        justify-content: space-between;
     }
 
     .title {
@@ -65,18 +52,15 @@ html, body {
     .hamburger {
         height: 8vh;
         width: auto;
+        fill: red;
         
         &:active {
             background-color: rgba(249, 249, 251, 0.1);
-            border-radius: 20px;   
+            border-radius: 10px;   
         }
     }
 
-// home 
-    .home-img {
-        width: 80%;
-        height: auto;
-    }
+
 
     
 
