@@ -1,3 +1,9 @@
+/* 
+    Transpiled with Easy Sass - Wojciech Sura
+    https://marketplace.visualstudio.com/items?itemName=spook.easysass 
+*/
+
+
 @import "_themes.scss"; 
 
 html, body {
@@ -59,6 +65,16 @@ html, body {
             border-radius: 10px;   
         }
     }
+
+
+@media only screen and (max-width: 768px) {
+    html, body {
+        background-color: green;
+    }
+    .hamburger {
+        display: none !important;
+    }
+}
 
 
 

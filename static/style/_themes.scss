@@ -25,7 +25,7 @@ $themes: (
 
 // creates CSS variables from $themes
 @each $theme-name, $theme-map in $themes {
-    [data-theme="#{$theme-name}"] {
+    :root[data-theme="#{$theme-name}"] {
         @each $key, $value in $theme-map {
             --#{$key}: #{$value};
         }
