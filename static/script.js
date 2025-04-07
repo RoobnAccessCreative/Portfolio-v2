@@ -1,33 +1,46 @@
-// Toggle the sidebar on click
+/** Toggle FomanticUI sidebar component */
 $('.hamburger').click(() => {
-  $('.ui.sidebar').sidebar('toggle');
+
+  $('.ui.sidebar')
+    .sidebar('setting', 'transition', 'overlay')
+    .sidebar('setting', 'scrollLock', 'true')
+    .sidebar('toggle')
+    .removeClass('uncover')
+
 });
+
 
 /**
  * @function
- * @desc Toggle the theme on a mouseup event.
+ * @desc Toggle the theme between light and dark.
  */
-$('#themeSwitch').on('mouseup', () => {
-  const userTheme = getCookie('userTheme') || 'Light';
+$('#themeSwitch').click(() => {
+
+  const userTheme = getCookie('userTheme') || 'light';
   let newTheme = userTheme;
+
   // toggle theme
   switch (userTheme) {
-    case 'Light':
-      newTheme = 'Dark';
-    case 'Dark':
-      newTheme = 'Light';
+    case 'light':
+      newTheme = 'dark';
+    case 'dark':
+      newTheme = 'light';
   }
+
   // implement results
   $('html').attr('data-theme', newTheme);
   document.cookie = `userTheme=${newTheme}; path=/; secure`;
+
 });
+
 
 /**
  * @function getCookie
- * @param {string} whiteChoc @desc The name of the desired cookie.
+ * @param {string} whiteChoc The name of the desired cookie.
  * @returns Value of whiteChoc cookie if present, null otherwise.
  */
 function getCookie(whiteChoc) {
+
   let cookies = document.cookie.split(';');
 
   let cookieJar = {};
@@ -37,11 +50,14 @@ function getCookie(whiteChoc) {
   });
 
   return whiteChoc in cookieJar ? cookieJar[whiteChoc] : null;
+
 }
 
 window.onload = () => {
-  const userTheme = getCookie('userTheme') || 'Light';
+
+  const userTheme = getCookie('userTheme') || 'light';
   $('html').attr('data-theme', userTheme);
+
 }
 
 

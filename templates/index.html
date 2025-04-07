@@ -1,3 +1,40 @@
 {% extends 'base.html' %}
 
-{% block content %}hi{% endblock %}
+{% block head %} <title>Reuben Dubois Portfolio</title> {% endblock %}
+
+{% block content %}
+
+    <div id="hero">
+        <div class="hero-container">
+            <h1 class="orbit">reuben<br>dubois</h1>
+            <span class="divider long"></span>
+            <h2 class="orbit">Student UI/UX Design & Developer</h2>
+        </div>
+        <span class="scroll-indicator">
+            <img src="{{ url_for('static', filename='/photos/mouse.svg') }}" alt="Black Mouse">
+            <p class="jetbrains-mono">scroll to see more</p>
+        </span>
+    </div>
+
+    <div id="bento-bio">
+        <div class="details">
+
+            <div class="card">
+                <p class="jetbrains-mono">
+                    We aren't quite sure what to put here yet. This sentence will be swapped out with 
+                    actual content before the web page is shown to the public. There needs to be 
+                    something here, even though it's not what you might expect on a finished web page. 
+                </p>
+            </div>
+            <span id="tools">
+                <div class="vscode tool"></div>
+                <div class="figma tool"></div>
+                <div class="git-gw tool"></div>
+            </span>
+        </div>
+        <img src="{{ url_for('static', filename='/photos/filler.svg') }}" alt="A Picture of Me—Reuben Dubois" class="jetbrains-mono">
+    </div>
+
+    
+
+{% endblock %}

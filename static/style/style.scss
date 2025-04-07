@@ -3,30 +3,33 @@
     https://marketplace.visualstudio.com/items?itemName=spook.easysass 
 */
 
-
 @import "_themes.scss"; 
 
 html, body {
     margin: 0;
     color: var(--text);
-    background: blue;
+    background: var(--background);
 
     min-height: 100vh;
     width: 100vw;
 }
 
-// font settings
-    .major-text {
-        font-family: "Orbit", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-    }
-    .text {
-        font-family: "JetBrains Mono", monospace;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-    }
+
+
+// FONTS
+
+.orbit {
+    font-family: "Orbit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.jetbrains-mono {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
 
 
 // MOBILE STYLES
@@ -40,7 +43,7 @@ html, body {
     flex-direction: column;
 }
 
-// top-bar
+    // navbar
     nav {
         height: fit-content;
         width: 90%;
@@ -58,19 +61,21 @@ html, body {
     .hamburger {
         height: 8vh;
         width: auto;
-        fill: red;
-        
-        &:active {
-            background-color: rgba(249, 249, 251, 0.1);
-            border-radius: 10px;   
-        }
+    }
+
+    .ham-bg:active {
+        fill-opacity: 1;
+        fill: transparentize($color: green, $amount: 1);
     }
 
 
-@media only screen and (max-width: 768px) {
-    html, body {
-        background-color: green;
-    }
+
+
+// MEDIA QUERIES
+    
+    // > Mobile
+@media only screen and (min-width: 768px) {
+
     .hamburger {
         display: none !important;
     }
