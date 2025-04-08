@@ -1,6 +1,10 @@
-<svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.138428" y="0.215332" width="71.9797" height="71.9797" rx="15" fill="#F9F9FB" fill-opacity="0.15"/>
-<rect x="12.3103" y="18.0391" width="47.6362" height="5.44412" rx="2" fill="#F9F9FB" fill-opacity="0.75"/>
-<rect x="12.3103" y="33.4834" width="47.6362" height="5.44412" rx="2" fill="#F9F9FB" fill-opacity="0.75"/>
-<rect x="12.3103" y="48.9272" width="47.6362" height="5.44412" rx="2" fill="#F9F9FB" fill-opacity="0.75"/>
+<svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1.22949" y="1.25" width="74.5" height="74.5" rx="10.75" fill="#F9F9FB" fill-opacity="0.3" stroke="url(#paint0_linear_321_57)" stroke-width="1.5"/>
+<path d="M59.9795 25.7H16.9795M59.9795 38.5H16.9795M59.9795 51.3H16.9795" stroke="#101B23" stroke-width="2.25"/>
+<defs>
+<linearGradient id="paint0_linear_321_57" x1="24.4526" y1="2" x2="67.571" y2="47.1993" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F9F9FB" stop-opacity="0.75"/>
+<stop offset="1" stop-color="#F9F9FB" stop-opacity="0.3"/>
+</linearGradient>
+</defs>
 </svg>

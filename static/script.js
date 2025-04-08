@@ -5,7 +5,7 @@ $('.hamburger').click(() => {
     .sidebar('setting', 'transition', 'overlay')
     .sidebar('setting', 'scrollLock', 'true')
     .sidebar('toggle')
-    .removeClass('uncover')
+    .removeClass('uncover') // if setting to overlay fails
 
 });
 
@@ -16,20 +16,24 @@ $('.hamburger').click(() => {
  */
 $('#themeSwitch').click(() => {
 
-  const userTheme = getCookie('userTheme') || 'light';
+  const userTheme = getCookie('userTheme') || $('html').attr('data-theme');
   let newTheme = userTheme;
+  console.log(newTheme);
 
   // toggle theme
   switch (userTheme) {
     case 'light':
       newTheme = 'dark';
+      break;
     case 'dark':
       newTheme = 'light';
+      break;
   }
 
   // implement results
   $('html').attr('data-theme', newTheme);
   document.cookie = `userTheme=${newTheme}; path=/; secure`;
+  console.log(newTheme);
 
 });
 
@@ -53,12 +57,19 @@ function getCookie(whiteChoc) {
 
 }
 
-window.onload = () => {
+// gives the 3 lines—<path>—the same click event as the glass—<rect>
+$('.burger-lines').click(() => {
+  console.log('lines');
+  $('.hamburger > rect').click();
+});
 
-  const userTheme = getCookie('userTheme') || 'light';
-  $('html').attr('data-theme', userTheme);
 
-}
+// window.onload = () => {
+
+//   const userTheme = getCookie('userTheme') || 'light';
+//   $('html').attr('data-theme', userTheme);
+
+// }
 
 
 

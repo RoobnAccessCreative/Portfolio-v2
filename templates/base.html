@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
+        
         <meta charset="U-TF8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
 
@@ -11,7 +11,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.4/semantic.min.js" integrity="sha512-Y/wIVu+S+XJsDL7I+nL50kAVFLMqSdvuLqF2vMoRqiMkmvcqFjEpEgeu6Rx8tpZXKp77J8OUpMKy0m3jLYhbbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             {# Sidebar #}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.4/components/sidebar.min.css" integrity="sha512-AaSaRLjR+hMdDZ2U9krGbzzG2IVU68gyuML4UuuZUBonMvX8x/UNnUU1DwmOwVnQWqHtHOJ1YRtXuRiDzZmKAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      
+            {# Icons #}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.4/components/icon.min.css" integrity="sha512-TWRDyIVIf+vAIJPt6vRyjyJLwZJizD8OGF3x9ZKsGNW6DejvY+1B9x+aN86SND5ziDzbei41I+LfaZpF59j1aA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         {# Google Fonts #}
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,13 +24,19 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='/style/style.min.css') }}"/>
         <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/photos/favicon.svg') }}"/>
 
+        <script>
+            const userTheme = getCookie('userTheme') || 'light';
+            $('html').attr('data-theme', userTheme);
+        </script>
+
         {% block head %}{% endblock %}
 
     </head>
     <body>
 
-        {# Mobile sidebar #}
-        <div class="ui sidebar inverted vertical menu right overlay">
+        {# Mobile sidebar
+            good for >= 350px #}
+        <div class="ui wide sidebar inverted vertical menu right overlay">
             <a class="item">
                 <i class="moon outline icon"></i>
             </a>
@@ -41,6 +49,9 @@
             <a class="item - orbit">
                 <p>Contact</p>
             </a>
+            <a class="item">
+                <img src="{{ url_for('static', filename='photos/close.svg') }}" alt="" class="close">
+            </a>
         </div>
 
         {# Content #}
@@ -50,18 +61,26 @@
                 <nav>
 
                     <span id="themeSwitch">
-                        <i class="moon outline icon - light-icon"></i>
-                        <i class="sun outline icon - dark-icon"></i>
+                        <i class="moon outline icon {##} light-icon"></i>
+                        <i class="sun outline icon {##} dark-icon"></i>
                     </span>
 
                     {% block title %}<div></div>{% endblock %}
                     
                     {# Mobile hamburger icon #}
-                    <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" class="hamburger">
-                        <rect x="0.138428" y="0.215332" width="71.9797" height="71.9797" rx="15" fill="#F9F9FB" fill-opacity="0.15" class="ham-bg"/>
-                        <rect x="12.3103" y="18.0391" width="47.6362" height="5.44412" rx="2" fill="#F9F9FB" fill-opacity="0.75"/>
-                        <rect x="12.3103" y="33.4834" width="47.6362" height="5.44412" rx="2" fill="#F9F9FB" fill-opacity="0.75"/>
-                        <rect x="12.3103" y="48.9272" width="47.6362" height="5.44412" rx="2" fill="#F9F9FB" fill-opacity="0.75"/>
+                    <svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" class="hamburger">
+                        <rect x="1.22949" y="1.25" width="74.5" height="74.5" rx="10.75" fill="#F9F9FB" fill-opacity="0.3" stroke="url(#paint0_linear_321_57)" stroke-width="1.5"/>
+                        <path d="M59.9795 25.7H16.9795M59.9795 38.5H16.9795M59.9795 51.3H16.9795" stroke="#101B23" stroke-width="2.25" class="burger-lines"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_321_57" x1="24.4526" y1="2" x2="67.571" y2="47.1993" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#F9F9FB" stop-opacity="0.75"/>
+                                <stop offset="1" stop-color="#F9F9FB" stop-opacity="0.3"/>
+                            </linearGradient>
+                            <linearGradient id="paint0_linear_dark" x1="24.4526" y1="2" x2="67.571" y2="47.1993" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#020A0A" stop-opacity="0.75"/>
+                                <stop offset="1" stop-color="#020A0A" stop-opacity="0.3"/>
+                            </linearGradient>
+                        </defs>
                     </svg>
 
                     {# Desktop nav buttons #}
