@@ -20,14 +20,11 @@
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Orbit&display=swap" rel="stylesheet">
 
         {# Local Files #}
-        <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='/scripts/norms.js') }}"></script>
+        <script src="{{ url_for('static', filename='/scripts/main.js') }}" defer></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='/style/style.min.css') }}"/>
         <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/photos/favicon.svg') }}"/>
 
-        <script>
-            const userTheme = getCookie('userTheme') || 'light';
-            $('html').attr('data-theme', userTheme);
-        </script>
 
         {% block head %}{% endblock %}
 
