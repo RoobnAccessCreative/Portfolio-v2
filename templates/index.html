@@ -5,18 +5,25 @@
 {% block content %}
 
     <div id="hero">
+
         <div class="hero-container">
             <h1 class="orbit">reuben<br>dubois</h1>
             <span class="divider long"></span>
             <h2 class="orbit">Student UI/UX Design & Developer</h2>
         </div>
+
         <span class="scroll-indicator">
-            <img src="{{ url_for('static', filename='/photos/mouse.svg') }}" alt="Black Mouse">
+            <svg width="37" height="53" viewBox="0 0 37 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.7461 0.1875C5.22325 0.1875 0.746094 4.66465 0.746094 10.1875V42.1875C0.746094 47.7103 5.22325 52.1875 10.7461 52.1875H26.2544C31.7772 52.1875 36.2544 47.7103 36.2544 42.1875V10.1875C36.2544 4.66465 31.7772 0.1875 26.2544 0.1875H10.7461ZM20.75 9.98828H16.25V23.4028H20.75V9.98828Z" fill="#101B23" class="mouse"/>
+            </svg>
             <p class="jetbrains-mono">scroll to see more</p>
         </span>
+
     </div>
 
+    
     <div id="bento-bio">
+
         <div class="details">
 
             <div class="card">
@@ -33,6 +40,7 @@
             </span>
         </div>
         <img src="{{ url_for('static', filename='/photos/filler.svg') }}" alt="A Picture of Me—Reuben Dubois" class="jetbrains-mono">
+
     </div>
 
     

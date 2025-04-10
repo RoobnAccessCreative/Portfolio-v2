@@ -1,9 +1,24 @@
-/* 
-    Transpiled with Easy Sass - Wojciech Sura
-    https://marketplace.visualstudio.com/items?itemName=spook.easysass 
-*/
 
 @import "_themes.scss"; 
+
+
+// FONTS
+
+.orbit {
+    font-family: "Orbit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.jetbrains-mono {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+// CONSTANTS
 
 html, body {
     margin: 0;
@@ -35,28 +50,8 @@ body.pushable > .pusher, body.pushable {
     display: var(--sun);
 }
 
-
-
-// FONTS
-
-.orbit {
-    font-family: "Orbit", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-.jetbrains-mono {
-    font-family: "JetBrains Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
-
-
-// MOBILE STYLES
-
 .desktop {
-    display: none !important;
+    display: none;
 }
 
 .wrapper {
@@ -73,6 +68,8 @@ body.pushable > .pusher, body.pushable {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        
     }
 
     .title {
@@ -90,6 +87,12 @@ body.pushable > .pusher, body.pushable {
         stroke-opacity: 0.4;
     }
 
+#hero {
+    background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}    
 
 
 
@@ -97,6 +100,10 @@ body.pushable > .pusher, body.pushable {
     
     // > Mobile
 @media only screen and (min-width: 768px) {
+
+    .desktop {
+        display: inline;
+    }
 
     .hamburger {
         display: none !important;
@@ -113,4 +120,4 @@ body.pushable > .pusher, body.pushable {
   
 
   
-  
+// Transpiled with Easy Sass - Wojciech Sura https://marketplace.visualstudio.com/items?itemName=spook.easysass   
