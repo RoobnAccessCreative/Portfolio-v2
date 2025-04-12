@@ -8,8 +8,7 @@ $themes: (
     primary:    hsl(191, 76%, 53%),
     secondary:  hsl(15, 82%, 58%),
     accent:     hsl(258, 62%, 43%),
-    sun:          none,
-    moon:         inline
+    theme-icon:   url('../photos/moon.svg')
   ),
   dark: (
     text:       hsl(240, 23%, 94%),
@@ -17,8 +16,7 @@ $themes: (
     primary:    hsl(191, 76%, 43%),
     secondary:  hsl(15, 82%, 48%),
     accent:     hsl(258, 62%, 43%),
-    sun:          inline,
-    moon:         none
+    theme-icon:   url('../photos/sun.svg')
   )
 
 );
