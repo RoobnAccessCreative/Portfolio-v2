@@ -24,26 +24,17 @@ html, body {
     min-height: 100vh;
     width: 100vw;
 
+    font-size: 16px;
     margin: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
     color: var(--text);
     background: var(--background);
 }
 
 body.pushable > .pusher, body.pushable {
     background: inherit;
-}
-
-.ui.sidebar.inverted.vertical.menu.right.overlay.visible {
-    background: var(--primary);
-}
-
-.desktop {
-    display: none;
-}
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
 }
 
 h1, h2, h3 {
@@ -63,12 +54,28 @@ h3 {
     font-size: 2rem;
 }
 
+.ui.sidebar.inverted.vertical.menu.right.overlay.visible {
+    background: var(--primary);
+}
+
+    // Mobile default
+.desktop { 
+    display: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
 
 
 // NAVBAR
 
 nav {
-    height: 5rem;
+    height: 12vh;
     width: 90%;
     margin: 5%;
 
@@ -76,17 +83,17 @@ nav {
     align-items: center;
     justify-content: space-between;
 
-    position: fixed;
+    position: absolute;
     top: 0;
 }
 
-#themeSwitch {
+.themeSwitch {
     height: 2rem;
     content: var(--theme-icon);
-    background: rgba(249,249,251,0.3);
+    // background: rgba(249,249,251,0.3);
     padding: 0.5rem;
-    border-radius: 0.5rem;
-    border: 1px solid hsl(240, 20%, 98%);
+    // border-radius: 0.5rem;
+    // border: 1px solid hsl(240, 20%, 98%);
 }
 
 .title {
@@ -96,14 +103,24 @@ nav {
 .hamburger {
     height: 4.5rem;
     width: auto;
+
+    box-shadow: 10px 8px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 0.8;
 }
 
 .hamburger > rect {
     transition: all 30ms ease-in-out;
+    fill-opacity: 0.1;
 }
 .hamburger > rect:active {
-    stroke: #101B23;
+    stroke: none;
     fill: #101B23;
+    box-shadow: inset 4px 4px 2px rgba(0, 0, 0, 0.75);
+}
+
+.burger-lines {
+    stroke: var(--text);
 }
 
 
@@ -112,6 +129,8 @@ nav {
 
 #hero {
     height: 88vh;
+    min-height: fit-content;
+    width: 100%;
 
     background: linear-gradient(to bottom right, var(--primary), var(--secondary));
     padding-top: 12vh;
@@ -151,6 +170,10 @@ nav {
 .scroll-indicator svg {
     height: 2.5rem;
     width: auto;
+}
+
+.mouse {
+    fill: var(--text);
 }
 
 

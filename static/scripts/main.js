@@ -14,7 +14,7 @@ $('.hamburger').click(() => {
  * @function
  * @desc Toggle the theme between light and dark.
  */
-$('#themeSwitch').click(() => {
+$('.themeSwitch').click(() => {
 
   const userTheme = getCookie('userTheme') || $('html').attr('data-theme');
   let newTheme = userTheme;
