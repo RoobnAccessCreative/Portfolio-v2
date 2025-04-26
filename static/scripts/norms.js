@@ -17,6 +17,15 @@ function getCookie(whiteChoc) {
 
 }
   
+// Assigns system preference
+const lightPreference = window.matchMedia('(prefers-color-scheme: light)').matches;
+const userPref = lightPreference ? 'light' : 'dark';
+
 // Sets theme on load
-const userTheme = getCookie('userTheme') || 'light';
+// Manual theme or system default
+const userTheme = getCookie('userTheme') || userPref;
 $('html').attr('data-theme', userTheme);
+
+$('document').ready(() => {
+  $('link[rel="icon"]').attr('href', `static/photos/favicon_${userTheme}.svg`);
+});

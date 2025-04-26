@@ -50,7 +50,7 @@ def single(name):
 def contact():
     nav = reset_buttons('contact')
     return render_template('contact.html', nav=nav)
-
+    
 
 # run the app with debugger
 if __name__ == '__main__':

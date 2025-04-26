@@ -1,17 +1,15 @@
 /** Toggle FomanticUI sidebar component */
-$('.hamburger').click(() => {
-
-  $('.ui.sidebar')
-    .sidebar('setting', 'transition', 'overlay')
-    .sidebar('setting', 'scrollLock', 'true')
-    .sidebar('toggle')
-    .removeClass('uncover') // if setting to overlay fails
-
-});
+$('.ui.sidebar').sidebar({
+  scrollLock: true, // doesn't work but gives class
+  transition: 'overlay',
+  mobileTransition: 'overlay',
+})
+  .sidebar('attach events', '.hamburger', 'show')
+  .sidebar('attach events', '.close-sidebar', 'hide');
 
 
 /**
- * @function
+ * @function changeTheme
  * @desc Toggle the theme between light and dark.
  */
 $('.themeSwitch').click(() => {
@@ -33,8 +31,7 @@ $('.themeSwitch').click(() => {
   // implement results
   $('html').attr('data-theme', newTheme);
   document.cookie = `userTheme=${newTheme}; path=/; secure`;
-  console.log(newTheme);
-
+  $('link[rel="icon"]').attr('href', `static/photos/favicon_${newTheme}.svg`);
 });
 
 

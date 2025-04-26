@@ -23,7 +23,7 @@
         <script src="{{ url_for('static', filename='/scripts/norms.js') }}"></script>
         <script src="{{ url_for('static', filename='/scripts/main.js') }}" defer></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='/style/style.min.css') }}"/>
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/photos/favicon.svg') }}"/>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/photos/favicon_light.svg') }}"/>
 
 
         {% block head %}{% endblock %}
@@ -31,29 +31,26 @@
     </head>
     <body>
 
-        {# Mobile sidebar
+        {# Mobile sidebar —
             good for >= 350px #}
-        <div class="ui wide sidebar inverted vertical menu right overlay">
+        <div class="ui wide sidebar inverted vertical menu right glass">
+            
             <a class="item">
-                <i class="moon outline icon"></i>
-            </a>
-            <a class="item - orbit">
-                <p>Home</p>
-            </a>
-            <a class="item - orbit">
-                <p>Projects</p>
-            </a>
-            <a class="item - orbit">
-                <p>Contact</p>
+                <p class="orbit">Home</p>
             </a>
             <a class="item">
-                <img src="{{ url_for('static', filename='photos/close.svg') }}" alt="" class="close">
+                <p class="orbit">Projects</p>
+            </a>
+            <a class="item">
+                <p class="orbit">Contact</p>
+            </a>
+            <a class="item close-sidebar">
+                <p class="jetbrains-mono">Close</p>
             </a>
         </div>
 
         {# Content #}
-        <div class="pusher"> 
-            <div class="wrapper">
+        <div class="overflowing pusher"> 
 
                 <nav>
 
@@ -62,9 +59,9 @@
                     {% block title %}{% endblock %}
                     
                     {# Mobile hamburger icon #}
-                    <svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" class="hamburger">
-                        <rect x="1.22949" y="1.25" width="74.5" height="74.5" rx="10.75" fill="#F9F9FB" fill-opacity="0.1" stroke="#F9F9FB" stroke-width="1" stroke-opacity="0.4"/>
-                        <path d="M59.9795 25.7H16.9795M59.9795 38.5H16.9795M59.9795 51.3H16.9795" stroke="#101B23" stroke-width="2.25" class="burger-lines"/>
+                    <svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg" class="hamburger mobile">
+                        <rect x="1.22949" y="1.25" width="74.5" height="74.5" rx="10.75" fill-opacity="0.1" stroke-width="1" stroke-opacity="0.4"/>
+                        <path d="M59.9795 25.7H16.9795M59.9795 38.5H16.9795M59.9795 51.3H16.9795" stroke-width="2.25" class="burger-lines"/>
                     </svg>
 
                     {# Desktop nav buttons #}
@@ -78,7 +75,7 @@
 
                 {% block content %}{% endblock %}
 
-            </div>
+            
         </div>
         
     </body>
